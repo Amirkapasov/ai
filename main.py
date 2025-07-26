@@ -14,8 +14,9 @@ def text_to_speech(text):
     tts = gTTS(text=text, lang='ru')
     tts.save('output.mp3')
     os.system('output.mp3')
-text = input('Введите ваш вопрос: ')
-text_vector = vectorizer.transform([text]).toarray()[0]
-answer = clf.predict([text_vector])[0]
-print(answer)
-text_to_speech(answer)
+for i in range(110): 
+    text = input('Введите ваш вопрос: ')
+    text_vector = vectorizer.transform([text]).toarray()[0]
+    answer = clf.predict([text_vector])[0]
+    print(answer)
+    text_to_speech(answer)
